@@ -1,0 +1,120 @@
+#rig {
+  list-style: none;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#rig:before {
+  content: 'Meet the kids';
+  position: absolute;
+  top: 1em;
+  font-size: 42px;
+}
+#rig li {
+  display: inline-block;
+  *display: inline;
+  /*for IE6 - IE7*/
+
+width: 50%;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* The wrapper for each item */
+
+.rig-cell {
+  /*margin:12px;
+  box-shadow:0 0 6px rgba(0,0,0,0.3);*/
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+li:nth-child(odd) .rig-text {
+  background-color: #FF671B;
+}
+li:nth-child(even) .rig-text {
+  background-color: #FF4141;
+}
+li:nth-child(3n) .rig-text {
+  background-color: #8216a9;
+}
+/* If have the image layer */
+
+.rig-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  transform: scale(1);
+  transition: all 1s;
+}
+#rig li: hover .rig-img {
+  transform: scale(1.05);
+}
+/* If have the overlay layer */
+
+.rig-overlay {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background: #3DC0F1 url(img/link.png) no-repeat center 20%;
+  background-size: 50px 50px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /*For IE6 - IE8*/
+
+transition: all 0.6s;
+}
+#rig li: hover .rig-overlay {
+  opacity: 0.8;
+}
+/* If have captions */
+
+.rig-text {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding: 0 30px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /*For older IE*/
+
+transform: translateY(-20px);
+  transition: all .3s;
+}
+#rig li:hover .rig-text {
+  transform: translateY(0px);
+  opacity: 0.75;
+}
+
+@media (min-width: 768px) {
+  #rig li {
+    width: 50%;
+   }
+}
+@media (max-width: 768px) {
+  #rig li {
+    width: 100%;
+   }
+}

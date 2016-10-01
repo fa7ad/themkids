@@ -70,12 +70,8 @@ appMakeBeCool.gateway.addClass('StickyHeader', function (properties, $, $window,
         _stickyHeaderSet = function () {
             if ($window.scrollTop() >= _globals.wrap.offset().top) {
                 _globals.header.addClass('sticky');
-                var url = _globals.logo.attr("src").replace('logo.', 'logo-sm.');
-                _globals.logo.attr("src", url);
             } else {
                 _globals.header.removeClass('sticky');
-                var url = _globals.logo.attr("src").replace('logo-sm.', 'logo.');
-                _globals.logo.attr("src", url);
             }
         },
 
